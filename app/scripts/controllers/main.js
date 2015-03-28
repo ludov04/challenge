@@ -9,13 +9,19 @@
  */
 angular.module('challengeApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $http.get('/data/tiles.json').success( function(data, status, headers, config) {
+
+    /**
+    * Possible enhancement: limit number of tiles + infinite scroll
+    */
+    $http.get('/data/tiles.json').success( function(data) {
     // this callback will be called asynchronously
     // when the response is available
-        $scope.tiles = data;
+      $scope.tiles = data;
     }).
-    error(function(data, status, headers, config) {
+    error(function(data, status) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
+      console.log(status);
+      alert('Could not load tiles');
     });
   });
