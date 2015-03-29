@@ -8,7 +8,7 @@
  * Controller of the challengeApp
  */
 angular.module('challengeApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, search) {
 
     /**
     * Possible enhancement: limit number of tiles + infinite scroll
@@ -16,7 +16,8 @@ angular.module('challengeApp')
     $http.get('/data/tiles.json').success( function(data) {
     // this callback will be called asynchronously
     // when the response is available
-      $scope.tiles = data;
+      $scope.tiles = { filtered: data, original: data };
+      search.init(data);
     }).
     error(function(data, status) {
     // called asynchronously if an error occurs
@@ -24,4 +25,7 @@ angular.module('challengeApp')
       console.log(status);
       alert('Could not load tiles');
     });
+
+
+
   });
