@@ -51,6 +51,10 @@ body {
   padding: 14px 24px;
 }
 
+.label {
+  margin-right: 5px;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;

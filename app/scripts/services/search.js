@@ -8,10 +8,10 @@
  * Provider in the challengeApp.
  */
 angular.module('challengeApp')
-  .provider('search', function () {
+  .provider('search', function Se() {
 
     // Private variables
-    var fuse = new Fuse([], { keys: ['title'], threshold: 0.3 } );
+    var fuse = new Fuse([], { keys: ['title', 'tags.name', 'description'], threshold: 0.3 } );
 
     // Private constructor
     function Search() {
@@ -25,20 +25,14 @@ angular.module('challengeApp')
         return fuse.search(string);
       };
 
-      this.byTag = function () {
-        return salutation;
+      // Public API for configuration
+      this.setTreshold = function (x) {
+        fuse.options.threshold = x;
       };
 
-      this.fullText = function () {
-
-      };
     }
 
-    // Public API for configuration
-    this.setTreshold = function (x) {
-      fuse.options.threshold = x;
-    };
-
+    
     // Method for instantiating
     this.$get = function () {
       return new Search();
