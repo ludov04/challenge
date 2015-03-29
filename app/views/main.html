@@ -1,23 +1,61 @@
 <div class="row">
   <div class="col-md-8">
-    <tile ng-repeat="tile in tiles.filtered track by tile.id"></tile>
+    <tile ng-repeat="tile in tiles.filtered | orderBy:'-added' "></tile>
   </div>
   <div class="col-md-4">
-    <div id="filters" class="row" ng-controller='SearchCtrl'>
-      <div class="panel panel-default tile">
-        <div class="panel-heading"><h5>Filters</h5></div>
-        <div class="panel-body">
-          
-          <div class="input-group">
-             <input type="text" 
-             class="form-control" 
-             placeholder="Search" 
-             ng-model="query" 
-             ng-model-options="{ debounce: 200 }"
-             ng-change="queryChanged(query)">
-          </div><!-- /input-group -->
+      <div id="filters" class="row" ng-controller='SearchCtrl'>
+        <div class="panel panel-default tile">
+          <div class="panel-heading"><h5>Filters</h5></div>
+          <div class="panel-body">
+            
+            <div class="form-group">
+               <input type="text" 
+               id="search-input"
+               class="form-control" 
+               placeholder="Search" 
+               ng-model="query" 
+               ng-model-options="{ debounce: 200 }"
+               ng-change="queryChanged(query)">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <div id="create" class="row" >
+        <div class="panel panel-default tile" ng-controller='CreateCtrl'>
+          <div class="panel-heading"><h5>Create Content</h5></div>
+          <div class="panel-body">
+            <form ng-submit="createTile(tile.title, tile.description, tile.tags)">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                 <input type="text" 
+                 class="form-control" 
+                 placeholder="Title" 
+                 ng-model = "tile.title"
+                 ng-required="true"
+                 >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                 <input type="text" 
+                 class="form-control" 
+                 placeholder="Description" 
+                 ng-model="tile.description"
+                 >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Tags</label>
+                 <input type="text" 
+                 class="form-control" 
+                 placeholder="Please separate each tag by ',' " 
+                 ng-model="tile.tags"
+                 >
+              </div>
+              <button class='btn btn-primary' type='submit'>Create</button>
+            </form>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
