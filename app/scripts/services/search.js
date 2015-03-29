@@ -30,6 +30,14 @@ angular.module('challengeApp')
         fuse.options.threshold = x;
       };
 
+      this.setOption = function (optionName, option) {
+        fuse.options[optionName] = option;
+      };
+
+      this.setKeys = function(keys) {
+        fuse.options.keys = keys;
+      };
+
     }
 
     
