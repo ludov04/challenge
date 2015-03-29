@@ -10,8 +10,12 @@
 angular.module('challengeApp')
   .provider('search', function () {
 
+    var defaultOptions = {
+       keys: ['title', 'tags.name', 'description'], 
+       threshold: 0.3 
+    }
     // Private variables
-    var fuse = new Fuse([], { keys: ['title', 'tags.name', 'description'], threshold: 0.3 } ); //default
+    var fuse = new Fuse([],  angular.copy(defaultOptions)); //default
 
     // Private constructor
     function Search() {
@@ -34,8 +38,20 @@ angular.module('challengeApp')
       };
 
       this.setKeys = function(keys) {
-        fuse.options.keys = keys;
+        if (Array.isArray(keys)) { 
+          fuse.options.keys = keys;
+        }
+        else if (typeof keys === 'string') {
+          fuse.options.keys = [keys];
+        }
+        else throw "parameter must be an array of string or a string";
+          
       };
+
+      this.setDefaultKeys = function() {
+        fuse.options.keys = defaultOptions.keys;
+        console.log(fuse.options);
+      }
 
     }
 

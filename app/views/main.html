@@ -15,7 +15,39 @@
                placeholder="Search" 
                ng-model="query" 
                ng-model-options="{ debounce: 200 }"
-               ng-change="queryChanged(query)">
+               ng-change="queryChanged(query, searchKey)">
+            </div>
+
+            <div class='form-group'>
+
+              <label class="radio-inline">
+                <input type="radio" 
+                ng-model="searchKey"
+                ng-change="queryChanged(query, searchKey)"
+                ng-value="['title', 'description', 'tags.name']" ng-checked="true">All
+              </label>
+
+              <label class="radio-inline">
+                <input type="radio" 
+                ng-model="searchKey"
+                ng-change="queryChanged(query, searchKey)"
+                value="title">Title
+              </label>
+
+              <label class="radio-inline">
+                <input type="radio" 
+                ng-model="searchKey"
+                ng-change="queryChanged(query, searchKey)"
+                value="description">Description
+              </label>
+
+              <label class="radio-inline">
+                <input type="radio" 
+                ng-model="searchKey"
+                ng-change="queryChanged(query, searchKey)"
+                value="tags.name">Tags
+              </label>
+              
             </div>
           </div>
         </div>
@@ -26,7 +58,7 @@
           <div class="panel-body">
             <form ng-submit="createTile(tile.title, tile.description, tile.tags)">
               <div class="form-group">
-                <label for="exampleInputEmail1">Title</label>
+                <label>Title</label>
                  <input type="text" 
                  class="form-control" 
                  placeholder="Title" 
