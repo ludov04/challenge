@@ -8,23 +8,36 @@
   
   <div class="sub-panel panel-body">
   	<div class='row'>
-  		<div class='col-md-12'>
-    		<span class="label label-default" ng-repeat='tag in ::tile.tags'>{{tag.name}}</span>
-    		<span class='pull-right'> {{tile.added | date :'short'}} </span>
+  		<div class='col-md-8'>
+  			<span class="label label-default tag" ng-repeat='tag in ::tile.tags'>{{tag.name}}</span>
+  	   		
     	</div>
+    	<div class='col-md-4'>
+			<div class='pull-right'> {{tile.added | date :'short'}} </div>
+		</div>
+    		
     </div>
   </div>
 
   <div class="sub-panel panel-body">
   	<div class='row'>
   		<div class='col-md-4'>
-  			<span class='text-center center-block'>Followers: {{tile.nFollowers}}</span>
+  			<span class='text-center center-block'>
+  				<i class="glyphicon glyphicon-user"></i>
+  				Followers: {{tile.nFollowers}}
+  			</span>
   		</div>
   		<div class='col-md-4'>
-  			<span class='text-center center-block'>Likes: {{tile.nLikes}}</span>
+  			<span class='text-center center-block'>
+  				<i class="glyphicon glyphicon-thumbs-up"></i>
+  				 Likes: {{tile.nLikes}} 
+  			</span>
   		</div>
   		<div class='col-md-4'>
-  			<span class='text-center center-block'>Comments: {{tile.nComments}}</span>
+  			<span class='text-center center-block'>
+  				<i class="glyphicon glyphicon-pencil"></i>
+  				Comments: {{tile.nComments}}
+  			</span>
   		</div>
   	</div>
   </div>
