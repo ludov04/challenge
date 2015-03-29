@@ -1,8 +1,9 @@
 <div class="panel panel-default tile" ng-controller="TileCtrl">
   <div class="panel-body">
-  	<a href="{{tile.href}}"><h5 class='title'>{{tile.title}}</h5></a>
+  	<h5 class='title'>{{tile.title}}</h5>
   	
     <p class='description'>{{tile.description}}</p>
+    <p ng-show="tile.href.substr(0,7) === 'http://'" ><a href="{{tile.href}}">Link</a></p>
   </div>
   <div>
   
