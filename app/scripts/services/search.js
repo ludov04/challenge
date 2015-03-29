@@ -11,13 +11,12 @@ angular.module('challengeApp')
   .provider('search', function () {
 
     // Private variables
-    var fuse = new Fuse([], { keys: ['title', 'tags.name', 'description'], threshold: 0.3 } );
+    var fuse = new Fuse([], { keys: ['title', 'tags.name', 'description'], threshold: 0.3 } ); //default
 
     // Private constructor
     function Search() {
 
       this.init = function (data) {
-        console.log(data);
         fuse.list = data;
       };
 

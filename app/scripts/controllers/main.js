@@ -24,7 +24,6 @@ angular.module('challengeApp')
       error(function(data, status) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
-        console.log(status);
         alert('Could not load tiles');
       });
     };
