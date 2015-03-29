@@ -1,10 +1,31 @@
 <div class="panel panel-default tile" ng-controller="TileCtrl">
   <div class="panel-body">
-  	<h5 class='title'>{{tile.title}}</h5>
-  	<span class='pull-right'> {{tile.added | date :'short'}} </span>
-    <span class='description'>{{tile.description}}</span>
-    <div>
-    	<span class="label label-default" ng-repeat='tag in ::tile.tags'>{{tag.name}}</span>
+  	<a href="{{tile.href}}"><h5 class='title'>{{tile.title}}</h5></a>
+  	
+    <p class='description'>{{tile.description}}</p>
+  </div>
+  <div>
+  
+  <div class="sub-panel panel-body">
+  	<div class='row'>
+  		<div class='col-md-12'>
+    		<span class="label label-default" ng-repeat='tag in ::tile.tags'>{{tag.name}}</span>
+    		<span class='pull-right'> {{tile.added | date :'short'}} </span>
+    	</div>
     </div>
+  </div>
+
+  <div class="sub-panel panel-body">
+  	<div class='row'>
+  		<div class='col-md-4'>
+  			<span class='text-center center-block'>Followers: {{tile.nFollowers}}</span>
+  		</div>
+  		<div class='col-md-4'>
+  			<span class='text-center center-block'>Likes: {{tile.nLikes}}</span>
+  		</div>
+  		<div class='col-md-4'>
+  			<span class='text-center center-block'>Comments: {{tile.nComments}}</span>
+  		</div>
+  	</div>
   </div>
 </div>
