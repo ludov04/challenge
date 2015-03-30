@@ -1,26 +1,36 @@
 #Knowledge Plaza Front-End Challenge
 
-The goal of this challenge is to learn, to have fun and to test if you would have fun working at Knowledge Plaza. If you apply for a Junior position, the code you will write is a lot less important than the way you approach an unknown problem.
+Here is my solution of the Knowledge Plaza Front-End Challenge
 
-##Description of the challenge
+##Description of the solution
 
-You are asked to write a small web application that display a dynamic stream of "tiles". Each tile is an exerpt of a piece of content. Tiles may have tags. 
+My solution uses 
 
-The stream should be filtrable by tags and/or by plain search. Your application will also allow your user to create a tile that will be displayed imediately in the stream.
+* AngularJS as frontend framework
+* BootStrap for UI
+* Grunt for automating build and tests
+* Bower for managing dependencies
+* Karma + Jasmine for unit test.
+* Yeoman for scaffolding.
 
-The initial content is described as a list of tiles in the attached JSON file. Each tile has multiple properties but you may only consider using tile.title and tile.tags. Other are optionnal but we are eager to see your creativity!
 
-![screenshot](https://raw.githubusercontent.com/whatever-company/challenge/master/frontend/Screen%20Shot%202015-03-24%20at%2013.57.16.png)
+![screenshot](https://raw.githubusercontent.com/ludov/challenge/master/frontend/screenshot.png)
 
-In the example above, each tile is a rectangle. The color is determined by tile.subtype, then tile.title, tile.description and tile.tags are displayed.
+Each tile is displayed in a rectangle. The rectangle contains the title, the description, and the tags of the tile.
+When the href attribute of the tile point to an article, a link is displayed.
+The rectangle also contains the number of followers, likes, and comments.
+The tags are removable.
 
-The right column allows to filter content in the first box. The second box allows to create a tile with a title and tags but no description.
+The user can filter the tiles that are displayed by title, description, tags, or all. The filter allows mispelling thanks to [FuseJS](http://kiro.me/projects/fuse.html) 
 
-##Technical specifications
+The user can also create content using the second box in the right column.
 
-We are asking you to create a private (or somewhat secret) github repository with your code. We strongly recommend the use of an existing framework surch as AngularJS or React.
+##Usage
 
-We expect the code to be readable and to have unit tests. We recommend Karma+Jasmine but you can use MochaJS or the framework of your choice.
+To run it, just type:
+```
+grunt serve
+```
+and navigate to http://localhost:9000
 
-In order to see how you work, we are interested by seeing each commits. A big dump of your project to github in one commit is not a good idea.
 
