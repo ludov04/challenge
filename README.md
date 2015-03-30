@@ -14,7 +14,7 @@ My solution uses
 * Yeoman for scaffolding.
 
 
-![screenshot](https://raw.githubusercontent.com/ludov/challenge/master/frontend/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/ludov04/challenge/master/frontend/screenshot.png)
 
 Each tile is displayed in a rectangle. The rectangle contains the title, the description, and the tags of the tile.
 When the href attribute of the tile point to an article, a link is displayed.
