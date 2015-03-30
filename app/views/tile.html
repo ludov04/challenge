@@ -10,7 +10,10 @@
   <div class="sub-panel panel-body">
   	<div class='row'>
   		<div class='col-md-8'>
-  			<span class="label label-default tag" ng-repeat='tag in ::tile.tags'>{{tag.name}}</span>
+  			<span class="label label-default tag" ng-repeat='tag in tile.tags'>
+  				{{tag.name}} 
+  				<span ng-click='removeTag(tag)' class='glyphicon glyphicon-remove-sign pointer'></span>
+  			</span>
   	   		
     	</div>
     	<div class='col-md-4'>

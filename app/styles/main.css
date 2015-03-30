@@ -68,6 +68,9 @@ body {
   border-color: #DDD;
 }
 
+.pointer {
+  cursor: pointer;
+}
 .tag {
   display: inline-block;
 }

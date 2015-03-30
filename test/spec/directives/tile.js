@@ -22,7 +22,7 @@ describe('Directive: tile', function () {
 
   it('should contain the tile title and description', inject(function () {
     expect(element.find('h5').text()).toBe('Tile Title');
-    expect(element.find('span.description').text()).toBe('Tile description');
+    expect(element.find('.description').text()).toBe('Tile description');
   }));
 
   it('should has the class tile', inject(function () {
