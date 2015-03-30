@@ -75,6 +75,6 @@ describe('Service: search', function () {
     search.setKeys(['title']);
     expect(search.search('title2').length).toBe(1);
     expect(search.search('energy').length).toBe(0);
-  })
+  });
 
 });

@@ -23,8 +23,8 @@ describe('Controller: SearchCtrl', function () {
   }));
 
   it('should assign tiles.filtered to original data when query string is empty', function () {
-    scope.queryChanged("c");
-    scope.queryChanged("");
+    scope.queryChanged('c');
+    scope.queryChanged('');
     expect(scope.tiles.filtered).toBe(scope.tiles.original);
   });
 });

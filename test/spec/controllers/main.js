@@ -28,19 +28,19 @@ describe('Controller: MainCtrl', function () {
 
   it('should fetch the tiles', function () {
     $httpBackend.expectGET('/data/tiles.json');
-    var controller = createController();
+    createController();
     $httpBackend.flush();
   });
 
   it('should attach the tiles to the scope', function () {
-    var controller = createController();
+    createController();
     $httpBackend.flush();
     expect(scope.tiles.original.tiles).toBe('retrived');
   });
 
   it('should display an alert if the tiles were not retrieved', function() {
     tileRequestHandler.respond(404, '');
-    var controller = createController();
+    createController();
     spyOn(window, 'alert');
     $httpBackend.flush();
     expect(window.alert).toHaveBeenCalled();
